@@ -1,0 +1,30 @@
+{
+  "index": {
+    "prefixPath": "../locales/",
+    "suffixPath": "/index.json",
+    "facMap": {
+    }
+  },
+  "fish": {
+    "prefixPath": "fish/lib/locale-provider/",
+    "facMap": {
+      "en": "en_US",
+      "zh-HK": "",
+      "zh-CN": ""
+    }
+  },
+  "react-intl": {
+    "prefixPath": "react-intl/locale-data/",
+    "facMap": {
+      "zh-HK": "zh",
+      "zh-CN": "zh"
+    }
+  },
+  "intl": {
+    "prefixPath": "intl/locale-data/jsonp/",
+    "facMap": {
+      "zh-HK": "zh-Hant-HK",
+      "zh-CN": "zh"
+    }
+  }
+}
