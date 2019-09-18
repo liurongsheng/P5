@@ -5,7 +5,7 @@ import Intl from 'i18n/intl'
 
 const ExampleList = (location, callback) => {
   require.ensure([], require => {
-    callback(null, require('modules/example/list'))
+    callback(null, require('modules/example/lists'))
   }, 'ExampleList')
 }
 const ExampleDetail = (location, callback) => {
@@ -26,6 +26,7 @@ const routes = history => (
         <IndexRoute getComponent={ExampleList} />
         <Route path="/detail/:id" getComponent={ExampleDetail} />
         <Route path="/add" getComponent={ExampleArticleAdd} />
+        <Route path="/mylist" getComponent={ExampleList} />
       </Route>
     </Route>
   </Router>

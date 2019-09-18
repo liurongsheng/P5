@@ -3,7 +3,7 @@ import * as T from './actionTypes'
 import axios from 'axios'
 
 export const articleGet = createAction(T.ARTICLE_GET,
-  () => axios.get('/api/v0.1/articles')
+  (data) => axios.get('/api/v0.1/articles', {params: {...data}})
 )
 
 export const articleAdd = createAction(T.ARTICLE_ADD,

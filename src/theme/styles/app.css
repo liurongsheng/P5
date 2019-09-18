@@ -3,5 +3,18 @@
 
 html,body {
   font-size: 14px;
-  background: resolve('example.jpg');
+  background: #fff;
+}
+.frame .fish-layout-header {
+  background: #1872f9;
+  height: 40px;
+  color: #fff;
+  font-size: 18px;
+  line-height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  letter-spacing: 5px;
+}
+.fish-list .fish-spin-container {
+  padding: 10px;
 }

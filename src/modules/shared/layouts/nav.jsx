@@ -18,7 +18,7 @@ class Nav extends React.Component {
     const needFac = window.__config.packageJson && window.__config.packageJson.needFac
     const langList = needFac && window.__config.langList ? window.__config.langList : []
     return (
-      <nav style={{ marginBottom: 10 }}>
+      <nav style={{ marginBottom: 30 }}>
         <IndexLink to="/">{formatMessage(messages.home)}</IndexLink>
         {langList.map(langItem => (
           <a key={langItem} href={`${global.location.pathname}?locale=${langItem}`} style={{ paddingLeft: 10 }}>

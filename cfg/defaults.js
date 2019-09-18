@@ -65,7 +65,7 @@ const alias = {
 // END ====================================================================================================
 
 /** 默认端口号 **/
-const defaultPort = _argJson.port || 8080
+const defaultPort = _argJson.port || 9000
 
 /** 入口文件组 **/
 let entryJs = {

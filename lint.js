@@ -6,11 +6,11 @@ const root = path.resolve(__dirname)
 // 如果src不在git根目录上，修改成项目需要 lint 的目录
 const src = 'src'
 const fix = process.env.npm_config_fix ? '--fix' : ''
-
+console.log(process.env.npm_config_fix)
 let error
 const exec = function (cmd) {
   try {
-    return execSync(cmd, { stdio: [process.stdin, process.stdout, process.stderr] })
+    return execSync(cmd, {stdio: [process.stdin, process.stdout, process.stderr]})
   } catch (e) {
     error = true
   }

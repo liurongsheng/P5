@@ -23,7 +23,7 @@
     "dev:mock": "node server.js --env=dev --mock",
     "dist": "npm run clean dist && npm run lang:import && npm run copy:polyfill && webpack --env=dist",
     "mock": "json-server --watch ./mock/db.json --routes ./mock/routes.json --port 8080",
-    "lint": "node lint.js"
+    "lint": "node lint.js npm_config_fix=true"
   },
   "license": "MIT",
   "dependencies": {

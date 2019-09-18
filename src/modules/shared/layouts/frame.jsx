@@ -1,5 +1,8 @@
 import React from 'react'
-import Nav from './nav'
+import style from './style.css'
+import { Layout } from 'fish';
+import {IndexLink} from "react-router";
+const { Header, Footer, Sider, Content } = Layout;
 
 class Frame extends React.Component {
   static propTypes = {
@@ -8,12 +11,15 @@ class Frame extends React.Component {
   render() {
     return (
       <div className="frame">
-        <div className="header">
-          <Nav />
-        </div>
-        <div className="container">
-          {this.props.children}
-        </div>
+        <Header>
+            答!
+          <button className={style.header_right}><IndexLink to="/add">提问</IndexLink></button>
+        </Header>
+        <Layout>
+          <Content>
+            {this.props.children}
+          </Content>
+        </Layout>
       </div>
     )
   }
