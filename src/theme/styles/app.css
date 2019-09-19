@@ -5,16 +5,47 @@ html,body {
   font-size: 14px;
   background: #fff;
 }
-.frame .fish-layout-header {
-  background: #1872f9;
-  height: 40px;
-  color: #fff;
-  font-size: 18px;
-  line-height: 40px;
-  padding-left: 15px;
-  padding-right: 15px;
-  letter-spacing: 5px;
+.fl {
+  float: left;
 }
-.fish-list .fish-spin-container {
-  padding: 10px;
+.fr {
+  float: right;
+}
+.header {
+  height: 42px;
+  padding: 5px 20px;
+  background-color: #1872f9;
+  color: #fff;
+}
+.header_left {
+  font-size: 20px;
+  float: left;
+}
+.header_right {
+  float: right;
+}
+.header_right button {
+  background: #06c;
+  border: 1px solid #03c;
+  border-radius: 5px;
+}
+.tabs {
+  height: 40px;
+  line-height: 40px;
+  background-color: #f9f9f9;
+  text-align: center;
+  border-bottom: solid 1px #ddd;
+}
+.tabs-left, .tabs-right {
+  width: 50%;
+}
+.tabs-left {
+  border-right: 1px solid #ddd;
+}
+.question_container {
+  padding: 15px 0;
+}
+.question_item {
+  padding: 15px 15px;
+  border-bottom: 1px solid #ccc;
 }

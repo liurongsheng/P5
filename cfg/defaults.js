@@ -47,7 +47,7 @@ const vendorJs = ['react', 'react-router', 'redux', 'react-redux', 'redux-action
 const publicPath = isDist ? '/' : '/'
 
 /** 源码路径 **/
-const srcPath = path.join(basePath, 'src') // 源码目录,该目录根路径下至少需要包含 index.html 与 index.js 两个文件
+const srcPath = path.join(basePath, 'src') //
 const stylesPath = path.join(srcPath, 'theme/styles') // 源码样式目录
 
 /** 别名 **/

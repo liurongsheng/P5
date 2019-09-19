@@ -15,7 +15,6 @@ export function timesFormat(timestamp) {
   const H = tmDate.getHours()
   const i = tmDate.getMinutes()
   const s = tmDate.getSeconds()
-
   if (timestampDiff < 60) { // 一分钟以内
     return '刚刚'
   } else if (timestampDiff < 3600) { // 一小时前之内
