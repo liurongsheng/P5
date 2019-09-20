@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Button, DatePicker, List, Avatar, Skeleton, message} from 'fish'
+import {Button} from 'fish'
 import axios from 'axios'
 import InfiniteScroll from 'react-infinite-scroller'
 import {timesFormat} from '../../utils'
@@ -13,7 +13,7 @@ export default class Lists extends Component {
   }
   goToAdd = () => {
     this.props.router.push(`add`)
-  }
+  };
 
   // 获取全部问题数据
   getQuestions = () => {
@@ -23,7 +23,7 @@ export default class Lists extends Component {
     }, () => {
       this.loadMore()
     })
-  }
+  };
 
   // 获取我的问题数据
   getMyQuestions = () => {
@@ -33,13 +33,13 @@ export default class Lists extends Component {
     }, () => {
       this.loadMore()
     })
-  }
+  };
   loadMore = (pageIndex = 1) => {
-    let url
+    let url;
     if (this.state.isMine === true) {
-      url = `/questions?_page=${pageIndex}&_limit=10&_sort=date&_order=desc&author=liurongsheng`
+      url = `/api/v0.1/questions?_page=${pageIndex}&_limit=10&_sort=date&_order=desc&author=liurongsheng`
     } else {
-      url = `/questions?_page=${pageIndex}&_limit=10&_sort=date&_order=desc`
+      url = `/api/v0.1/questions?_page=${pageIndex}&_limit=10&_sort=date&_order=desc`
     }
     axios.get(url).then((data) => {
       if (data.data.length > 0) {
@@ -50,7 +50,10 @@ export default class Lists extends Component {
     }).catch(function (error) {
       console.log(error)
     })
-  }
+  };
+  goToDetail = (id) => {
+    this.props.router.push(`detail/${id}`)
+  };
   render() {
     return (
       <div>
@@ -108,9 +111,9 @@ class TextLimt extends Component {
   state = {
     content: '',
     showAll: false
-  }
+  };
   componentDidMount() {
-    const len = this.props.text.length
+    const len = this.props.text.length;
     if (len > 30) {
       this.setState({content: this.props.text.slice(0, 30) + '......', showAll: true})
     } else {
@@ -119,9 +122,9 @@ class TextLimt extends Component {
   }
 
   handleClick = (e) => {
-    e.stopPropagation()
+    e.stopPropagation();
     this.setState({content: this.props.text, showAll: false})
-  }
+  };
   render() {
     return (
       <div>{this.state.content}<span onClick={this.handleClick} style={{display: this.state.showAll ? 'inline-block' : 'none', color: '#339adf'}}>显示全部</span></div>

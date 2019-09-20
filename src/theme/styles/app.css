@@ -11,6 +11,10 @@ html,body {
 .fr {
   float: right;
 }
+.center {
+  text-align: center;
+}
+
 .header {
   height: 42px;
   padding: 5px 20px;
@@ -48,4 +52,48 @@ html,body {
 .question_item {
   padding: 15px 15px;
   border-bottom: 1px solid #ccc;
+}
+
+.addPage.header {
+  height: 42px;
+  padding: 5px 20px;
+  background-color: #1872f9;
+  color: #fff;
+  text-align: center;
+}
+.addPage .header_left {
+  line-height: 32px;
+  font-size: 18px;
+  display: inline-block;
+}
+.addPage .header_center {
+  line-height: 32px;
+  font-size: 18px;
+  display: inline-block;
+}
+.addPage.form_content {
+  margin: 20px;
+}
+.addPage .form_footer {
+  display: none;
+  margin-top: 10px;
+}
+.addPage .form_footer button {
+  margin-right: 15px;
+  background: #999;
+  border-radius: 10px;
+  border: 1px solid #666;
+  color: #fff;
+}
+.addPage .form_footer button:first-child {
+  background: #06c;
+}
+
+@media (min-width: 1000px) {
+  .addPage .header_left,.addPage .header_right {
+    display: none;
+  }
+  .addPage .form_footer {
+    display: block;
+  }
 }
