@@ -31,6 +31,34 @@ export default class Detail extends Component {
     this.setState({inputValue: e.target.value})
   };
   handleSubmit = () => {
+    let {inputValue, questionList} = this.state;
+    questionList = questionList[0];
+    let newAnswer = {
+      content: inputValue,
+      name: "liurongsheng",
+      date: new Date() - 0
+    };
+    if (typeof questionList.answerList !== "undefined") {
+      questionList.answerList.unshift(newAnswer)
+    } else {
+      questionList.answerList = [];
+      questionList.answerList.unshift(newAnswer)
+    }
+    const url = `/questions/${this.props.params.id}`;
+    const config = {
+      headers: {
+        "Content-Type": "application/json"
+      }
+    };
+    axios.put(url, questionList, config).then((data) => {
+      if (data.data.length > 0) {
+        this.setState({questionList: [...this.state.questionList, ...data.data], init: false, hasMore: true}, () => { console.log(this.state.questionList) })
+      } else {
+        this.setState({hasMore: false, init: false})
+      }
+    }).catch(function (error) {
+      console.log(error)
+    });
     this.setState({visible: false, inputValue: ''})
   };
   loadMore = (pageIndex = 1) => {
