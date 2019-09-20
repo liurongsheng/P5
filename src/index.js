@@ -32,8 +32,8 @@ message.config({
   duration: 2,
   maxCount: 3,
   style: { zIndex: 9999 },
-  className: 'custom-message',
-});
+  className: 'custom-message'
+})
 render((
   <Provider store={store}>
     {routes(history)}

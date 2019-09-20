@@ -1,10 +1,10 @@
 import React, {Component} from 'react'
-import {Button, message, Icon, Form, Input, Modal} from 'fish'
-import axios from "axios";
+import {Button, Icon, Input} from 'fish'
+import axios from 'axios'
 import InfiniteScroll from 'react-infinite-scroller'
 import {timesFormat} from '../../utils'
 
-const { TextArea } = Input;
+const { TextArea } = Input
 
 export default class Detail extends Component {
   state = {
@@ -31,25 +31,26 @@ export default class Detail extends Component {
     this.setState({inputValue: e.target.value})
   };
   handleSubmit = () => {
-    let {inputValue, questionList} = this.state;
-    questionList = questionList[0];
-    let newAnswer = {
+    const {inputValue} = this.state
+    let {questionList} = this.state
+    questionList = questionList[0]
+    const newAnswer = {
       content: inputValue,
-      name: "liurongsheng",
+      name: 'liurongsheng',
       date: new Date() - 0
-    };
-    if (typeof questionList.answerList !== "undefined") {
+    }
+    if (typeof questionList.answerList !== 'undefined') {
       questionList.answerList.unshift(newAnswer)
     } else {
-      questionList.answerList = [];
+      questionList.answerList = []
       questionList.answerList.unshift(newAnswer)
     }
-    const url = `/questions/${this.props.params.id}`;
+    const url = `/questions/${this.props.params.id}`
     const config = {
       headers: {
-        "Content-Type": "application/json"
+        'Content-Type': 'application/json'
       }
-    };
+    }
     axios.put(url, questionList, config).then((data) => {
       if (data.data.length > 0) {
         this.setState({questionList: [...this.state.questionList, ...data.data], init: false, hasMore: true}, () => { console.log(this.state.questionList) })
@@ -58,11 +59,11 @@ export default class Detail extends Component {
       }
     }).catch(function (error) {
       console.log(error)
-    });
+    })
     this.setState({visible: false, inputValue: ''})
   };
   loadMore = (pageIndex = 1) => {
-    const url = `/api/v0.1/questions?id=${this.props.params.id}&_page=${pageIndex}&_limit=2`;
+    const url = `/api/v0.1/questions?id=${this.props.params.id}&_page=${pageIndex}&_limit=2`
     axios.get(url).then((data) => {
       if (data.data.length > 0) {
         this.setState({questionList: [...this.state.questionList, ...data.data], init: false, hasMore: true}, () => { console.log(this.state.questionList) })

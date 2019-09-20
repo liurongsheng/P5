@@ -2,8 +2,7 @@ import React, {Component} from 'react'
 import {Button, message, Icon, Form, Input, Modal} from 'fish'
 import axios from 'axios'
 
-const FormItem = Form.Item;
-const { TextArea } = Input;
+const { TextArea } = Input
 class AddPage extends Component {
   goHome = () => {
     this.props.router.push('/')
@@ -20,38 +19,38 @@ class AddPage extends Component {
   };
 
   handleSubmit = (e) => {
-   e.preventDefault();
-   const { getFieldValue, setFieldsValue } = this.props.form;
-   this.props.form.validateFieldsAndScroll((err, values) => {
-     if (!err) {
-       Modal.confirm({
-         content: '是否确认提交问题',
-         zIndex: 9999,
-         onOk() {
-           axios.post(`/api/v0.1/questions`, {
-             'title': getFieldValue('title'),
-             'description': getFieldValue('description'),
-             'date': new Date() - 0,
-             'author': 'liu',
-             'answerList': {},
-             'isMine': true
-           }).then((data) => {
-             message.success('发布成功');
-             setFieldsValue({
-               title: '',
-               description: ''
-             })
-           }).catch(function (error) {
-             console.log(error)
-           })
-         }
-       })
-     }
-   })
+    e.preventDefault()
+    const { getFieldValue, setFieldsValue } = this.props.form
+    this.props.form.validateFieldsAndScroll((err, values) => {
+      if (!err) {
+        Modal.confirm({
+          content: '是否确认提交问题',
+          zIndex: 9999,
+          onOk() {
+            axios.post(`/api/v0.1/questions`, {
+              'title': getFieldValue('title'),
+              'description': getFieldValue('description'),
+              'date': new Date() - 0,
+              'author': 'liu',
+              'answerList': {},
+              'isMine': true
+            }).then((data) => {
+              message.success('发布成功')
+              setFieldsValue({
+                title: '',
+                description: ''
+              })
+            }).catch(function (error) {
+              console.log(error)
+            })
+          }
+        })
+      }
+    })
   };
 
   render() {
-    const { getFieldDecorator } = this.props.form;
+    const { getFieldDecorator } = this.props.form
     // const formItemLayout = {
     //   labelCol: {
     //     xs: { span: 24 },
@@ -109,4 +108,4 @@ class AddPage extends Component {
     )
   }
 }
-export default Form.create()(AddPage);
+export default Form.create()(AddPage)

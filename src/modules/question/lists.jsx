@@ -29,13 +29,13 @@ export default class Lists extends Component {
   getMyQuestions = () => {
     this.setState({
       questionList: [],
-      isMine: true,
+      isMine: true
     }, () => {
       this.loadMore()
     })
   };
   loadMore = (pageIndex = 1) => {
-    let url;
+    let url
     if (this.state.isMine === true) {
       url = `/api/v0.1/questions?_page=${pageIndex}&_limit=2&_sort=date&_order=desc&author=liurongsheng`
     } else {
@@ -113,7 +113,7 @@ class TextLimt extends Component {
     showAll: false
   };
   componentDidMount() {
-    const len = this.props.text.length;
+    const len = this.props.text.length
     if (len > 30) {
       this.setState({content: this.props.text.slice(0, 30) + '......', showAll: true})
     } else {
@@ -122,7 +122,7 @@ class TextLimt extends Component {
   }
 
   handleClick = (e) => {
-    e.stopPropagation();
+    e.stopPropagation()
     this.setState({content: this.props.text, showAll: false})
   };
   render() {
