@@ -4,7 +4,7 @@ import axios from 'axios'
 
 const FormItem = Form.Item;
 const { TextArea } = Input;
- class AddPage extends Component {
+class AddPage extends Component {
   goHome = () => {
     this.props.router.push('/')
   };
@@ -68,7 +68,7 @@ const { TextArea } = Input;
           <div className="header_left fl" onClick={this.goHome}><Icon type="left" /></div>
           <div className="header_center center">发布问题</div>
           <div className="header_right fr">
-            <Button type="primary" onClick={this.goToAdd}>提问</Button>
+            <Button type="primary" onClick={this.handleSubmit}>提问</Button>
           </div>
         </header>
         <div className="addPage form_content">

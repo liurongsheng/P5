@@ -2,6 +2,7 @@ import 'theme/styles/app.css'
 import 'theme/styles/app.scss'
 // 使用babel-plugin-transform-runtime不能完全代替babel-polyfill
 import 'babel-polyfill'
+import {message} from 'fish'
 if (typeof global.Promise === 'undefined') {
   require('es6-promise/auto')
 }
@@ -26,6 +27,13 @@ const store = configureStore()
 const hashHistory = routerHistory(createHistory)({queryKey: false})
 const history = syncHistoryWithStore(hashHistory, store)
 
+message.config({
+  top: 300,
+  duration: 2,
+  maxCount: 3,
+  style: { zIndex: 9999 },
+  className: 'custom-message',
+});
 render((
   <Provider store={store}>
     {routes(history)}

@@ -50,10 +50,15 @@ html,body {
   padding: 15px 0;
 }
 .question_item {
+  position: relative;
   padding: 15px 15px;
   border-bottom: 1px solid #ccc;
 }
-
+.question_item .footer .total {
+  position: absolute;
+  right: 15px;
+  bottom: 15px;
+}
 .addPage.header {
   height: 42px;
   padding: 5px 20px;
@@ -88,9 +93,102 @@ html,body {
 .addPage .form_footer button:first-child {
   background: #06c;
 }
+.detailPage.header {
+  height: 42px;
+  padding: 5px 20px;
+  background-color: #1872f9;
+  color: #fff;
+  text-align: center;
+}
+.detailPage .header_left {
+  line-height: 32px;
+  font-size: 18px;
+  display: inline-block;
+}
+.detailPage .header_center {
+  line-height: 32px;
+  font-size: 18px;
+  display: inline-block;
+}
+.detail_content {
+  padding: 15px 0;
+}
+.detail_item {
+  padding: 15px 15px;
+  border-bottom: 1px solid #ccc;
+}
+.detail_item .title {
+  font-weight: bold;
+  color: #339adf;
+  margin-bottom: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.detail_item .desc {
+  margin-bottom: 10px;
+}
+.detail_item .footer {
+  position: relative;
+  height: 20px;
+  line-height: 20px;
+}
+.detail_item .footer .name, .question-item .footer .time {
+  margin-right: 20px;
+}
+.detail_item .footer .total {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.answer-list .item {
+  padding: 15px;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+}
+.answer-list .item-hd {
+  margin-bottom: 10px;
+}
+.answer-list .item-hd .name {
+  margin-right: 20px;
+}
+.answer-popup-box {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.answer-popup {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  padding: 15px 20px;
+  background-color: #f9f9f9;
+}
+.answer-popup .title {
+  position: relative;
+  margin-bottom: 10px;
+}
+.answer-popup .title .close {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.answer-popup .submit {
+  margin-top: 10px;
+}
+.loader, .bottom {
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+}
 
 @media (min-width: 1000px) {
-  .addPage .header_left,.addPage .header_right {
+  .addPage .header_left, .addPage .header_right {
     display: none;
   }
   .addPage .form_footer {
