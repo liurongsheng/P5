@@ -107,7 +107,16 @@
       "description": "22",
       "date": 1568960233238,
       "author": "liu",
-      "answerList": [],
+      "answerList": [
+        {
+          "answerId": 1,
+          "content": "1111",
+          "name": "liurongsheng",
+          "date": 1568982921767,
+          "likeNum": 3,
+          "dislikeNum": 2
+        }
+      ],
       "isMine": true,
       "id": 9
     },
@@ -204,7 +213,24 @@
       "description": "111",
       "date": 1568973615118,
       "author": "liu",
-      "answerList": [],
+      "answerList": [
+        {
+          "answerId": 2,
+          "content": "444",
+          "name": "liurongsheng",
+          "date": 1568982912639,
+          "likeNum": 0,
+          "dislikeNum": 2
+        },
+        {
+          "answerId": 1,
+          "content": "444",
+          "name": "liurongsheng",
+          "date": 1568982908784,
+          "likeNum": 0,
+          "dislikeNum": 0
+        }
+      ],
       "isMine": true,
       "id": 12
     },
@@ -215,9 +241,36 @@
       "author": "liu",
       "answerList": [
         {
-          "content": "11",
+          "answerId": 4,
+          "content": "22",
           "name": "liurongsheng",
-          "date": 1568977987179
+          "date": 1568982901392,
+          "likeNum": 0,
+          "dislikeNum": 0
+        },
+        {
+          "answerId": 3,
+          "content": "233",
+          "name": "liurongsheng",
+          "date": 1568982666384,
+          "likeNum": 1001,
+          "dislikeNum": 16
+        },
+        {
+          "answerId": 2,
+          "content": "44444",
+          "name": "liurongsheng",
+          "date": 1568981535183,
+          "likeNum": 13,
+          "dislikeNum": 17
+        },
+        {
+          "answerId": 1,
+          "content": "12",
+          "name": "liurongsheng",
+          "date": 1568981523918,
+          "likeNum": 29,
+          "dislikeNum": 12
         }
       ],
       "isMine": true,

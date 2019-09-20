@@ -37,9 +37,9 @@ export default class Lists extends Component {
   loadMore = (pageIndex = 1) => {
     let url
     if (this.state.isMine === true) {
-      url = `/api/v0.1/questions?_page=${pageIndex}&_limit=2&_sort=date&_order=desc&author=liurongsheng`
+      url = `/api/v0.1/questions?_page=${pageIndex}&_limit=2&_sort=date&_order=desc&author=liurongsheng&_t=${new Date().getTime()}`
     } else {
-      url = `/api/v0.1/questions?_page=${pageIndex}&_limit=2&_sort=date&_order=desc`
+      url = `/api/v0.1/questions?_page=${pageIndex}&_limit=2&_sort=date&_order=desc&_t=${new Date().getTime()}`
     }
     axios.get(url).then((data) => {
       if (data.data.length > 0) {

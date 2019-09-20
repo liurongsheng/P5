@@ -141,17 +141,36 @@ html,body {
   right: 0;
   top: 0;
 }
-.answer-list .item {
+.answer_list .item {
   padding: 15px;
   margin-bottom: 10px;
   border-bottom: 1px solid #ddd;
 }
-.answer-list .item-hd {
+.answer_list .item_hd {
   margin-bottom: 10px;
 }
-.answer-list .item-hd .name {
-  margin-right: 20px;
+.answer_list .item_hd .name {
+  margin-right: 10px;
 }
+.answer_list .item_content {
+  font-size: 16px;
+  margin-right: 120px;
+  position: relative;
+  display: inline;
+}
+.answer_list .item_like {
+  font-size: 16px;
+  position: absolute;
+  right: 45px;
+  display: inline-block;
+}
+.answer_list .item_dislike {
+  font-size: 16px;
+  position: absolute;
+  right: 125px;
+  display: inline-block;
+}
+
 .answer-popup-box {
   position: fixed;
   left: 0;
