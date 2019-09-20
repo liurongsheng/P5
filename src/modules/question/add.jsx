@@ -32,7 +32,7 @@ class AddPage extends Component {
               'description': getFieldValue('description'),
               'date': new Date() - 0,
               'author': 'liu',
-              'answerList': {},
+              'answerList': [],
               'isMine': true
             }).then((data) => {
               message.success('发布成功')

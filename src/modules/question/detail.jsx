@@ -39,7 +39,7 @@ export default class Detail extends Component {
       name: 'liurongsheng',
       date: new Date() - 0
     }
-    if (typeof questionList.answerList !== 'undefined') {
+    if (Array.isArray(questionList.answerList)) {
       questionList.answerList.unshift(newAnswer)
     } else {
       questionList.answerList = []
